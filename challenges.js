@@ -34,11 +34,20 @@ addOne(-5) //=> -4
 -----------------------------------------------------------------*/
 // Your solution for 01-addOne here:
 
+// function declaration
 function addOne(num) {
   return num + 1;
 }
 
+//function expression
+const addOne2 = function(x){
+  return x; 
+}
 
+//arrow function
+const addOne3 = (x) =>{
+  return x;
+}
 
 
 /*-----------------------------------------------------------------
@@ -60,10 +69,30 @@ addTwoNumbers('Hello', 5) //=> NaN
 -----------------------------------------------------------------*/
 // Your solution for 02-addTwoNumbers here:
 
+function addTwoNumbers(x, y) {
+  if (typeof x === "number" && typeof y === "number"){
+  console.log(x + y);
+  return x + y;
+  } else{
+    console.log(NaN);
+    return NaN;
+  }
+}
+
+// const addTwoNumbers = function(num1, num2){
+//   if(isNaN(num1) || isNaN(num2)){
+//     return NaN 
+//   } else {
+//     return num1 + num2
+//   }
+// }
+
+// ternary 
+//return isNaN(num1) || is NaN(num2) ? NaN : num1 + num2
 
 
-
-
+//arrow 
+//const addTwoNumbers = (num1, num2) => isNaN(num1) || isNaN(num2) ? NaN : num1 + num2
 /*-----------------------------------------------------------------
 Challenge: 03-sumNumbers
 
