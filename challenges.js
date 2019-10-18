@@ -14,8 +14,8 @@ sayHello() //=> Hello!
 // Your solution for 00-sayHello (example) here:
 
 function sayHello() {
-  return 'Hello!'
-}
+  return 'Hello!';
+};
 
 
 /*-----------------------------------------------------------------
@@ -37,17 +37,17 @@ addOne(-5) //=> -4
 // function declaration
 function addOne(num) {
   return num + 1;
-}
+};
 
-//function expression
-const addOne2 = function(x){
-  return x; 
-}
+// //function expression
+// const addOne2 = function(x){
+//   return x; 
+// }
 
-//arrow function
-const addOne3 = (x) =>{
-  return x;
-}
+////arrow function
+// const addOne3 = (x) =>{
+//   return x;
+// }
 
 
 /*-----------------------------------------------------------------
@@ -68,6 +68,8 @@ addTwoNumbers(0, 0) //=> 0
 addTwoNumbers('Hello', 5) //=> NaN
 -----------------------------------------------------------------*/
 // Your solution for 02-addTwoNumbers here:
+
+//typeof will check for type of many different things, we're just working with numbers here so ternary or isNaN is better
 
 function addTwoNumbers(x, y) {
   if (typeof x === "number" && typeof y === "number"){
@@ -112,9 +114,54 @@ sumNumbers([]) //=> 0
 -----------------------------------------------------------------*/
 // Your solution for 03-sumNumbers here:
 
+//incorrect
+
+// let numArray = []; 
+
+// const sumNumbers = function(arr){
+//   let sum = 0;
+//   if arr.length = 0{
+//     console.log("array is empty");
+//     return 0;
+//   }
+//   for(let i = 0; i >= arr.length -1; i++){
+//     sum += arr[i];
+//   }
+// console.log(sum);
+// return sum;
+// }
 
 
+//correct
 
+// function sumNumbers(total){
+//   let sum = 0;
+//   if (total.length){
+//     for(let i = 0; i < total.length; i++){
+//       sum += total[i];
+//     }
+//   } else {
+//     return 0
+//   }
+//   return sum;
+// }
+
+// function sumNumbers(arry){
+//   if(arry.length === 0){
+//     return 0;
+//   }
+//   return arry.reduce((acc, sum) => acc + sum)
+// }
+
+//line 153 without arrow function
+// arry.reduce(function(acc,sum){
+//   return acc + sum;
+// })
+
+// ternary solution
+function sumNumbers(arr){
+  return arr.length ? arr.reduce((acc, sum) => acc + sum) : 0;
+}
 
 /*-----------------------------------------------------------------
 Challenge: 04-addList
@@ -135,7 +182,20 @@ add(7,-12) //=> -5
 -----------------------------------------------------------------*/
 // Your solution for 04-addList here:
 
+// function addList(){
+//   var sum = 0;
+//   for(var i = 0; i < arguments.length; i ++){
+//     sum += arguments[i];
+//   }
+//   return sum;
+// }
 
+function addList(...args){
+  if(arguments.length === 0){
+    return 0;
+  }
+  return arguments.reduce((acc, sum) => acc + sum);
+}
 
 
 
