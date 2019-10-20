@@ -120,11 +120,11 @@ sumNumbers([]) //=> 0
 
 // const sumNumbers = function(arr){
 //   let sum = 0;
-//   if arr.length = 0{
+//   if (arr.length === 0){
 //     console.log("array is empty");
 //     return 0;
 //   }
-//   for(let i = 0; i >= arr.length -1; i++){
+//   for(let i = 0; i <= arr.length -1; i++){
 //     sum += arr[i];
 //   }
 // console.log(sum);
@@ -191,10 +191,10 @@ add(7,-12) //=> -5
 // }
 
 function addList(...args){
-  if(arguments.length === 0){
+  if(args.length === 0){
     return 0;
   }
-  return arguments.reduce((acc, sum) => acc + sum);
+  return args.reduce((acc, sum) => acc + sum);
 }
 
 
@@ -219,7 +219,15 @@ computeRemainder(10.5, 3) //=> 1.5
 -----------------------------------------------------------------*/
 // Your solution for 05-computeRemainder:
 
-
+function computeRemainder (a, b){
+  if( b === 0){
+    return Infinity;
+  } else{
+    let c = math.floor(a / b);
+    let d = c * c;
+    return a - d;
+  }
+};
 
 
 
