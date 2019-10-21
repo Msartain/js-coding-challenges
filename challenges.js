@@ -254,17 +254,18 @@ range(5,2) //=> "First argument must be less than second"
 -----------------------------------------------------------------*/
 // Your solution for 06-range here:
 
-let arr = [];
-
+//hard code
 function range(x, y){
-  if(x > y){
-    console.log("First arguement must be less than second.");
-  }; 
-  for(let i = x; i >= y-1; i++){
-  arr.push([i]);
-}
+  let arr = [];
+  if (x > y)
+   return "First argument must be less than second"; 
+  for(let i = x; i < y; i++){
+  arr.push(i);
+  }
+return arr;
 }
 
+//refactor
 
 
 /*-----------------------------------------------------------------
