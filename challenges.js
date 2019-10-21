@@ -219,14 +219,20 @@ computeRemainder(10.5, 3) //=> 1.5
 -----------------------------------------------------------------*/
 // Your solution for 05-computeRemainder:
 
-function computeRemainder (a, b){
-  if( b === 0){
-    return Infinity;
-  } else{
-    return a % b;
-  }
-};
+//hard code
+// function computeRemainder (num1, num2){
+//   if( num2 === 0){
+//     return Infinity;
+//   } else{
+//     return num1 % num2; //(x - (math.floor((x / y)) * y));
+//   }
+// };
 
+
+//ternary
+function computeRemainder(num1, num2){
+  return num2 === 0 ? Infinity : num1 % num2;
+}
 
 
 /*-----------------------------------------------------------------
@@ -248,12 +254,17 @@ range(5,2) //=> "First argument must be less than second"
 -----------------------------------------------------------------*/
 // Your solution for 06-range here:
 
+let arr = [];
 
 function range(x, y){
   if(x > y){
     console.log("First arguement must be less than second.");
-  } 
+  }; 
+  for(let i = x; i >= y-1; i++){
+  arr.push([i]);
 }
+}
+
 
 
 /*-----------------------------------------------------------------
