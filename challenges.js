@@ -223,9 +223,7 @@ function computeRemainder (a, b){
   if( b === 0){
     return Infinity;
   } else{
-    let c = math.floor(a / b);
-    let d = c * c;
-    return a - d;
+    return a % b;
   }
 };
 
@@ -251,7 +249,11 @@ range(5,2) //=> "First argument must be less than second"
 // Your solution for 06-range here:
 
 
-
+function range(x, y){
+  if(x > y){
+    console.log("First arguement must be less than second.");
+  } 
+}
 
 
 /*-----------------------------------------------------------------
