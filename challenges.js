@@ -320,9 +320,17 @@ removeEnds('a'); //=> "" (empty string)
 -----------------------------------------------------------------*/
 // Your solution for 08-removeEnds here:
 
+//hard code .substring first arg is starting point, second arg is "up to" point. (1, 11) will go from 1 -> 10. (or use .slice)
+let removeEnds = (str) => {
+  if (str.length < 3) return '';
+  return str.substring(1, str.length -1)
+}
 
+// refactor with ternary
 
-
+// function removeEnds(str){
+//   return str.length < 3 ? '' : str.substring(1, str.length - 1);
+// }
 
 /*-----------------------------------------------------------------
 Challenge: 09-charCount
