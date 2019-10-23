@@ -283,8 +283,24 @@ reverseUpcaseString("SEI Rocks!"); //=> "!SKCOR IES"
 -----------------------------------------------------------------*/
 // Your solution for 07-reverseUpcaseString here:
 
+//declaration
+// function reverseUpcaseString(){
+
+// }
 
 
+//arrow function (expression)
+
+// let reverseUpcaseString = (str) => {
+//   let arry = str.split('')
+//   arry.reverse()
+//   return arry.join('').toUpperCase()
+// }
+
+//(declaration) refactor using "chaining" built in methods. data type changes half way through return chain
+function reverseUpcaseString(str){
+  return str.split('').reverse().join('').toUpperCase();
+}
 
 
 /*-----------------------------------------------------------------
