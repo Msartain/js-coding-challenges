@@ -351,7 +351,13 @@ charCount('Today is fantastic!') //=> { T: 1, o: 1, d: 1, a: 3, y: 1, ' ': 2, i:
 -----------------------------------------------------------------*/
 // Your solution for 09-charCount here:
 
-
+function charCount (word){
+  obj = {};
+  for(let i = 0; i > word.length; i++){
+    obj[word[i]] ? (obj[word[i]]++) : obj[word[i]] = 1;
+  }
+  return obj;
+};
 
 
 
@@ -377,7 +383,9 @@ formatWithPadding(1234, '*', 3); //=> "1234"
 -----------------------------------------------------------------*/
 // Your solution for 10-formatWithPadding here:
 
-
+function formateWithPadding(int, str, num2){
+  
+};
 
 
 
