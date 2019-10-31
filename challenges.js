@@ -353,8 +353,8 @@ charCount('Today is fantastic!') //=> { T: 1, o: 1, d: 1, a: 3, y: 1, ' ': 2, i:
 
 function charCount (word){
   obj = {};
-  for(let i = 0; i > word.length; i++){
-    obj[word[i]] ? (obj[word[i]]++) : obj[word[i]] = 1;
+  for(let i = 0; i < word.length; i++){
+    obj[word[i]] ? obj[word[i]]++ : obj[word[i]] = 1;
   }
   return obj;
 };
@@ -383,11 +383,19 @@ formatWithPadding(1234, '*', 3); //=> "1234"
 -----------------------------------------------------------------*/
 // Your solution for 10-formatWithPadding here:
 
-function formateWithPadding(int, str, num2){
-  
-};
-
-
+function formatWithPadding(int, str, num2){
+//if int length is greater than num2, return int as string. .toString()
+if (int.toString().length > num2){
+  return int.toString()
+ }
+//.padStart(length, str)
+if (int.toString().length < num2){
+  for (i=0; i<num2.toString().length; i++){
+    const fNsplit = int.toString().padStart(num2, str)
+    return fNsplit
+  }
+ }
+ }
 
 /*-----------------------------------------------------------------
 Challenge: 11-isPalindrome
