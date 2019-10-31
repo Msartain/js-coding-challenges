@@ -418,9 +418,17 @@ isPalindrome(''); //=> true
 -----------------------------------------------------------------*/
 // Your solution for 11-isPalindrome here:
 
+//empty string returns true
 
-
-
+function isPalindrome(str){
+  //.split() .reverse() .join()
+  let revStr = str.split('').reverse().join('')
+    if (revStr == str){
+      return true;
+    } else{
+      return false;
+  }
+};
 
 /*-----------------------------------------------------------------
 Challenge: 12-hammingDistance
