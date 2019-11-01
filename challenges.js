@@ -421,14 +421,15 @@ isPalindrome(''); //=> true
 //empty string returns true
 
 function isPalindrome(str){
-  //.split() .reverse() .join()
-  let revStr = str.split('').reverse().join('')
+  let revStr = str.split(' ').join('').split('').reverse().join('').toUpperCase()
+  str = str.split(' ').join('').split('').join('').toUpperCase()
     if (revStr == str){
       return true;
     } else{
       return false;
   }
 };
+
 
 /*-----------------------------------------------------------------
 Challenge: 12-hammingDistance
