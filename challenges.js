@@ -423,7 +423,7 @@ isPalindrome(''); //=> true
 function isPalindrome(str){
   let revStr = str.split(' ').join('').split('').reverse().join('').toUpperCase()
   str = str.split(' ').join('').split('').join('').toUpperCase()
-    if (revStr == str){
+    if (revStr === str){
       return true;
     } else{
       return false;
@@ -454,8 +454,18 @@ hammingDistance('abc', 'ab'); //=> NaN
 // Your solution for 12-hammingDistance here:
 
 
-
-
+function hammingDistance(str1, str2){
+  let count = 0;
+  if(str1.length !== str2.length){
+    return NaN;
+  } for(let i = 0; i <= str1.length; i++){
+        if (str1[i] !== str2[i]){
+          count++
+        }
+      }
+      // console.log(count)
+      return count;
+  }
 
 /*-----------------------------------------------------------------
 Challenge: 13-mumble
@@ -477,6 +487,10 @@ mumble('!A 2'); //=> '!-AA-   -2222'
 -----------------------------------------------------------------*/
 // Your solution for 13-mumble here:
 
+// function mumble(str){
+
+// };
+// //
 
 
 
