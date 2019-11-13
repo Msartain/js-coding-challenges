@@ -492,7 +492,7 @@ let arr = [];
 let newStr = str.split('');
 for(let i = 0; i < newStr.length; i++){
     arr.push(newStr[i].repeat(i + 1));
-  }
+  };
 return arr.join('-')
 };
 
