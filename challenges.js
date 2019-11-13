@@ -515,7 +515,13 @@ fromPairs([ ['name', 'Sam"], ['age', 24], ['name', 'Sally'] ]) //=> { name: "Sal
 -----------------------------------------------------------------*/
 // Your solution for 14-fromPairs here:
 
-
+function fromPairs(arr) {
+  let obj = {};
+  arr.forEach(function(el){
+   obj[el[0]] = el[1];
+  });
+  return obj;
+};
 
 
 
