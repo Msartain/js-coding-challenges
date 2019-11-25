@@ -583,6 +583,14 @@ findHighestPriced([
 -----------------------------------------------------------------*/
 // Your solution for 16-findHighestPriced here:
 
+function findHighestPriced(arr){
+  let max = arr[0];
+  arr.forEach(function(obj){
+   let value = obj;
+   max = (value.price > max.price) ? value : max;
+  })
+  return max;
+}
 
 
 
@@ -760,6 +768,13 @@ intersection([1, 'a', true, 1, 1], [true, 1, 'b', 1]) //=> [1, true, 1]
 -----------------------------------------------------------------*/
 // Your solution for 22-intersection here:
 
+function intersection(arr1, arr2){
+  let newArr = [];
+
+
+
+  return newArr;
+}
 
 
 
