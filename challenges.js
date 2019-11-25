@@ -543,6 +543,9 @@ mergeObjects({a: 1, b: 2, c: 3}, {d: 4}, {b: 22, d: 44});  //=> {a: 1, b: 22, c:
 -----------------------------------------------------------------*/
 // Your solution for 15-mergeObjects here:
 
+function mergeObjects(obj1, ...obj2){
+  return Object.assign(obj1, ...obj2)
+};
 
 
 
