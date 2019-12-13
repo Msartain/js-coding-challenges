@@ -431,6 +431,8 @@ function isPalindrome(str){
 };
 
 
+
+
 /*-----------------------------------------------------------------
 Challenge: 12-hammingDistance
 
@@ -715,7 +717,26 @@ isPrime(200) //=> false
 -----------------------------------------------------------------*/
 // Your solution for 20-isPrime here:
 
-
+function isPrime(num) {
+	// Initialize result to true
+	result = true;
+	// Also check to see if integer
+	// Check if number is greater than one
+	if (!Number.isInteger(num) || num < 2) {
+		console.warn('Input number must be positive integer greater than 1');
+		result = false;
+		return result;
+	}
+	// Loop over values between 2 up to but not including num
+	for (let i = 2; i < num; i++) {
+		// conditional that checks if num mod I is equal to zero
+		if (num % i === 0) {
+			result = false;
+		}
+	}
+	// return result
+	return result;
+}
 
 
 
