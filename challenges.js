@@ -585,14 +585,28 @@ findHighestPriced([
 -----------------------------------------------------------------*/
 // Your solution for 16-findHighestPriced here:
 
+// me 
 function findHighestPriced(arr){
   let max = arr[0];
   arr.forEach(function(obj){
-   let value = obj;
-   max = (value.price > max.price) ? value : max;
+   max = (obj.price > max.price) ? obj : max;
   })
   return max;
 }
+
+
+//solution
+// function findHighestPriced(arr) {
+//   var highestPrice = 0;
+//   var resultObj;
+//   arr.forEach(function(item) {
+//     if (item.price > highestPrice) {
+//       highestPrice = item.price;
+//       resultObj = item;
+//     }
+//   });
+//   return resultObj;
+// }
 
 
 
@@ -624,6 +638,16 @@ mapArray( ['rose', 'tulip', 'daisy'], function(f, i) {
 -----------------------------------------------------------------*/
 // Your solution for 17-mapArray here:
 
+function mapArray(arr, cb){
+  let newArr = []
+  //The mapArray function should iterate over each element in the array (first arg).
+  arr.forEach(function(el, idx){
+    //For each iteration, invoke the callback function (2nd arg), passing to it as arguments,the current element and its index.
+    newArr.push(cb(el, idx))
+  })
+  //Whatever is returned by the callback function should be included in the new array at the index of the current iteration.
+  return newArr
+}
 
 
 
@@ -764,7 +788,18 @@ primeFactors(200) //=> [2, 2, 2, 5, 5]
 -----------------------------------------------------------------*/
 // Your solution for 21-primeFactors here:
 
+function primeFactors(num){
+  let primeFacts = []
+  if(!Number.isInteger(num) || num < 2){
+    return primeFacts;
+  }
+  for(let i = 2; i < num; i++){
+    if(num % i === 0){
 
+    }
+  }
+
+}
 
 
 
