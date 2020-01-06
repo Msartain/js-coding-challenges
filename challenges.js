@@ -687,7 +687,23 @@ reduceArray( ['Yes', 'No', 'Yes', 'Maybe'], function(acc, v) {
 // Your solution for 18-reduceArray here:
 
 
+function reduceArray(array, cb, acc) {
+  let result = acc;
+  //iterate over each element in the array 
+  array.forEach(function(el, idx) {
+    result = cb(result, el, idx);
+  });
+  return result;
+  //return whatever is returned by the callback function on the last iteration.
+}
 
+
+//For each iteration, invoke the callback function (2nd arg), passing to it three arguments:
+// (1) the "accumulator", which is the value returned by the callback during the previous iteration;
+// (2) the  current element; and (3) the index of the current iteration.
+
+//On the first iteration, provide the third argument provided to reduceArray as the first argument when invoking the callback,
+// then for subsequent iterations, provide the value returned by the callback during the previous iteration.
 
 
 /*-----------------------------------------------------------------
