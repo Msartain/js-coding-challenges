@@ -733,7 +733,12 @@ flatten( [1, [2, [3, [4]]], 1, 'a', ['b', 'c']] );
 -----------------------------------------------------------------*/
 // Your solution for 19-flatten here:
 
-
+function flatten(arr){
+  let newArr = Array.prototype.concat.apply([], arr);
+  let finArr = Array.prototype.concat.apply([], newArr);
+  let lastArr = Array.prototype.concat.apply([], finArr);
+  return lastArr
+}
 
 
 
