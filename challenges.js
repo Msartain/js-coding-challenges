@@ -805,16 +805,39 @@ primeFactors(200) //=> [2, 2, 2, 5, 5]
 // Your solution for 21-primeFactors here:
 
 function primeFactors(num){
+  let primeNums = []
   let primeFacts = []
   if(!Number.isInteger(num) || num < 2){
     return primeFacts;
   }
-  for(let i = 2; i < num; i++){
-    if(num % i === 0){
-
+  let i;
+  for(i = 2; i < num; i++){
+    let result = false;
+    for(let j = 2; j < i; j++){
+      if(i % j === 0){
+        result = true;
+    
+      }
+    }
+    if(result === false){
+      primeNums.push(i)
     }
   }
-
+   for(let k = 0; k < primeNums.length; k ++){
+    if(num % primeNums[k] === 0){
+      let sum = num / primeNums[k]
+      primeFacts.push(primeNums[k])
+      while(sum % primeNums[k] === 0){
+        console.log(primeNums[k])
+        primeFacts.push(primeNums[k])
+        sum /= primeNums[k];
+      }
+    } 
+   }
+   if(primeFacts.length === 0){
+     primeFacts.push(num) ;
+   }
+return primeFacts;
 }
 
 
