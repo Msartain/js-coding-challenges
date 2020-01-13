@@ -868,14 +868,19 @@ intersection([1, 'a', true, 1, 1], [true, 1, 'b', 1]) //=> [1, true, 1]
 -----------------------------------------------------------------*/
 // Your solution for 22-intersection here:
 
-function intersection(arr1, arr2){
+// function intersection(arr1, arr2){
+//   return arr1.filter(value => -1 !== arr2.indexOf(value))
+//  }
+
+ function intersection(arr1, arr2) {
   let newArr = [];
-
-
-
+  let arr2Copy = [...arr2];
+  arr1.forEach(val => {
+    let idx = arr2Copy.indexOf(val);
+    if (idx > -1) newArr.push(arr2Copy.splice(idx, 1)[0]);
+  });
   return newArr;
 }
-
 
 
 
