@@ -906,7 +906,25 @@ balancedBrackets( '[({}[])]' ) // => true
 -----------------------------------------------------------------*/
 // Your solution for 23-balancedBrackets here:
 
+//- Write a function called balancedBrackets that accepts a single string as argument.
 
+function balancedBrackets(els) {
+  // false if they are not balanced.
+  if (els.length % 2) return false;
+  //initiate array
+  var stack = [];
+  //loop through the input elements
+  for (var i = 0; i < els.length; i++) {
+    var b = els.charAt(i);
+    if ( '([{'.includes(b) ) {
+      stack.push(b);
+    } else {
+      if (!'() {} []'.includes(stack.pop() + b)) return false;
+    }
+  }
+  //should return true if the string's braces are "balanced" and false if they are not.
+  return true;
+}
 
 
 
@@ -936,7 +954,17 @@ isWinningTicket( [ ['ABC', 66], ['dddd', 15], ['Hello', 108] ] ) // => false
 -----------------------------------------------------------------*/
 // Your solution for 24-isWinningTicket here:
 
-
+function isWinningTicket(input){
+  var winner = true;
+  for (var i = 0; i < input.length; i++) {
+    var charFromNumber = String.fromCharCode(input[i][1]);
+    if (!input[i][0].includes(charFromNumber)) {
+      winner = false;
+      break;
+    }
+  }
+  return winner;
+}
 
 
 
