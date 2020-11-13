@@ -71,15 +71,15 @@ addTwoNumbers('Hello', 5) //=> NaN
 
 //typeof will check for type of many different things, we're just working with numbers here so ternary or isNaN is better
 
-function addTwoNumbers(x, y) {
-  if (typeof x === "number" && typeof y === "number"){
-  console.log(x + y);
-  return x + y;
-  } else{
-    console.log(NaN);
-    return NaN;
-  }
-}
+// function addTwoNumbers(x, y) {
+//   if (typeof x === "number" && typeof y === "number"){
+//   console.log(x + y);
+//   return x + y;
+//   } else{
+//     console.log(NaN);
+//     return NaN;
+//   }
+// }
 
 // const addTwoNumbers = function(num1, num2){
 //   if(isNaN(num1) || isNaN(num2)){
@@ -90,11 +90,11 @@ function addTwoNumbers(x, y) {
 // }
 
 // ternary 
-//return isNaN(num1) || is NaN(num2) ? NaN : num1 + num2
+// return isNaN(num1) || isNaN(num2) ? NaN : num1 + num2
 
 
 //arrow 
-//const addTwoNumbers = (num1, num2) => isNaN(num1) || isNaN(num2) ? NaN : num1 + num2
+const addTwoNumbers = (num1, num2) => isNaN(num1) || isNaN(num2) ? NaN : num1 + num2
 /*-----------------------------------------------------------------
 Challenge: 03-sumNumbers
 
@@ -114,54 +114,7 @@ sumNumbers([]) //=> 0
 -----------------------------------------------------------------*/
 // Your solution for 03-sumNumbers here:
 
-//incorrect
 
-// let numArray = []; 
-
-// const sumNumbers = function(arr){
-//   let sum = 0;
-//   if (arr.length === 0){
-//     console.log("array is empty");
-//     return 0;
-//   }
-//   for(let i = 0; i <= arr.length -1; i++){
-//     sum += arr[i];
-//   }
-// console.log(sum);
-// return sum;
-// }
-
-
-//correct
-
-// function sumNumbers(total){
-//   let sum = 0;
-//   if (total.length){
-//     for(let i = 0; i < total.length; i++){
-//       sum += total[i];
-//     }
-//   } else {
-//     return 0
-//   }
-//   return sum;
-// }
-
-// function sumNumbers(arry){
-//   if(arry.length === 0){
-//     return 0;
-//   }
-//   return arry.reduce((acc, sum) => acc + sum)
-// }
-
-//line 153 without arrow function
-// arry.reduce(function(acc,sum){
-//   return acc + sum;
-// })
-
-// ternary solution
-function sumNumbers(arr){
-  return arr.length ? arr.reduce((acc, sum) => acc + sum) : 0;
-}
 
 /*-----------------------------------------------------------------
 Challenge: 04-addList
@@ -181,21 +134,6 @@ add(1,50,1.23) //=> 52.23
 add(7,-12) //=> -5
 -----------------------------------------------------------------*/
 // Your solution for 04-addList here:
-
-// function addList(){
-//   var sum = 0;
-//   for(var i = 0; i < arguments.length; i ++){
-//     sum += arguments[i];
-//   }
-//   return sum;
-// }
-
-function addList(...args){
-  if(args.length === 0){
-    return 0;
-  }
-  return args.reduce((acc, sum) => acc + sum);
-}
 
 
 
@@ -219,20 +157,6 @@ computeRemainder(10.5, 3) //=> 1.5
 -----------------------------------------------------------------*/
 // Your solution for 05-computeRemainder:
 
-//hard code
-// function computeRemainder (num1, num2){
-//   if( num2 === 0){
-//     return Infinity;
-//   } else{
-//     return num1 % num2; //(x - (math.floor((x / y)) * y));
-//   }
-// };
-
-
-//ternary
-function computeRemainder(num1, num2){
-  return num2 === 0 ? Infinity : num1 % num2;
-}
 
 
 /*-----------------------------------------------------------------
@@ -254,18 +178,6 @@ range(5,2) //=> "First argument must be less than second"
 -----------------------------------------------------------------*/
 // Your solution for 06-range here:
 
-//hard code
-function range(x, y){
-  let arr = [];
-  if (x > y)
-   return "First argument must be less than second"; 
-  for(let i = x; i < y; i++){
-  arr.push(i);
-  }
-return arr;
-}
-
-//refactor
 
 
 /*-----------------------------------------------------------------
@@ -283,24 +195,6 @@ reverseUpcaseString("SEI Rocks!"); //=> "!SKCOR IES"
 -----------------------------------------------------------------*/
 // Your solution for 07-reverseUpcaseString here:
 
-//declaration
-// function reverseUpcaseString(){
-
-// }
-
-
-//arrow function (expression)
-
-// let reverseUpcaseString = (str) => {
-//   let arry = str.split('')
-//   arry.reverse()
-//   return arry.join('').toUpperCase()
-// }
-
-//(declaration) refactor using "chaining" built in methods. data type changes half way through return chain
-function reverseUpcaseString(str){
-  return str.split('').reverse().join('').toUpperCase();
-}
 
 
 /*-----------------------------------------------------------------
@@ -320,17 +214,6 @@ removeEnds('a'); //=> "" (empty string)
 -----------------------------------------------------------------*/
 // Your solution for 08-removeEnds here:
 
-//hard code .substring first arg is starting point, second arg is "up to" point. (1, 11) will go from 1 -> 10. (or use .slice)
-let removeEnds = (str) => {
-  if (str.length < 3) return '';
-  return str.substring(1, str.length -1)
-}
-
-// refactor with ternary
-
-// function removeEnds(str){
-//   return str.length < 3 ? '' : str.substring(1, str.length - 1);
-// }
 
 /*-----------------------------------------------------------------
 Challenge: 09-charCount
@@ -350,15 +233,6 @@ charCount('hello') //=> { h: 1, e: 1, l: 2, o: 1 }
 charCount('Today is fantastic!') //=> { T: 1, o: 1, d: 1, a: 3, y: 1, ' ': 2, i: 2, s: 2, f: 1, n: 1, t: 2, c: 1, '!': 1 }
 -----------------------------------------------------------------*/
 // Your solution for 09-charCount here:
-
-function charCount (word){
-  obj = {};
-  for(let i = 0; i < word.length; i++){
-    obj[word[i]] ? obj[word[i]]++ : obj[word[i]] = 1;
-  }
-  return obj;
-};
-
 
 
 /*-----------------------------------------------------------------
@@ -383,19 +257,7 @@ formatWithPadding(1234, '*', 3); //=> "1234"
 -----------------------------------------------------------------*/
 // Your solution for 10-formatWithPadding here:
 
-function formatWithPadding(int, str, num2){
-//if int length is greater than num2, return int as string. .toString()
-if (int.toString().length > num2){
-  return int.toString()
- }
-//.padStart(length, str)
-if (int.toString().length < num2){
-  for (i=0; i<num2.toString().length; i++){
-    const fNsplit = int.toString().padStart(num2, str)
-    return fNsplit
-  }
- }
- }
+
 
 /*-----------------------------------------------------------------
 Challenge: 11-isPalindrome
@@ -417,19 +279,6 @@ isPalindrome('A nut for a jar of tuna'); //=> true
 isPalindrome(''); //=> true
 -----------------------------------------------------------------*/
 // Your solution for 11-isPalindrome here:
-
-//empty string returns true
-
-function isPalindrome(str){
-  let revStr = str.split(' ').join('').split('').reverse().join('').toUpperCase()
-  str = str.split(' ').join('').split('').join('').toUpperCase()
-    if (revStr === str){
-      return true;
-    } else{
-      return false;
-  }
-};
-
 
 
 
@@ -456,19 +305,6 @@ hammingDistance('abc', 'ab'); //=> NaN
 // Your solution for 12-hammingDistance here:
 
 
-function hammingDistance(str1, str2){
-  let count = 0;
-  if(str1.length !== str2.length){
-    return NaN;
-  } for(let i = 0; i <= str1.length; i++){
-        if (str1[i] !== str2[i]){
-          count++
-        }
-      }
-      // console.log(count)
-      return count;
-  }
-
 /*-----------------------------------------------------------------
 Challenge: 13-mumble
 
@@ -489,15 +325,6 @@ mumble('!A 2'); //=> '!-AA-   -2222'
 -----------------------------------------------------------------*/
 // Your solution for 13-mumble here:
 
-function mumble(str){
-let arr = [];
-let newStr = str.split('');
-for(let i = 0; i < newStr.length; i++){
-    arr.push(newStr[i].repeat(i + 1));
-  };
-return arr.join('-')
-};
-
 
 /*-----------------------------------------------------------------
 Challenge: 14-fromPairs
@@ -517,15 +344,6 @@ fromPairs([ ['name', 'Sam"], ['age', 24], ['name', 'Sally'] ]) //=> { name: "Sal
 -----------------------------------------------------------------*/
 // Your solution for 14-fromPairs here:
 
-function fromPairs(arr) {
-  let obj = {};
-  arr.forEach(function(el){
-   obj[el[0]] = el[1];
-  });
-  return obj;
-};
-
-
 
 /*-----------------------------------------------------------------
 Challenge: 15-mergeObjects
@@ -544,10 +362,6 @@ mergeObjects({a: 1, b: 2, c: 3}, {d: 4});  //=> {a: 1, b: 2, c: 3, d: 4}
 mergeObjects({a: 1, b: 2, c: 3}, {d: 4}, {b: 22, d: 44});  //=> {a: 1, b: 22, c: 3, d: 44}
 -----------------------------------------------------------------*/
 // Your solution for 15-mergeObjects here:
-
-function mergeObjects(obj1, ...obj2){
-  return Object.assign(obj1, ...obj2)
-};
 
 
 
@@ -585,29 +399,6 @@ findHighestPriced([
 -----------------------------------------------------------------*/
 // Your solution for 16-findHighestPriced here:
 
-// me 
-function findHighestPriced(arr){
-  let max = arr[0];
-  arr.forEach(function(obj){
-   max = (obj.price > max.price) ? obj : max;
-  })
-  return max;
-}
-
-
-//solution
-// function findHighestPriced(arr) {
-//   var highestPrice = 0;
-//   var resultObj;
-//   arr.forEach(function(item) {
-//     if (item.price > highestPrice) {
-//       highestPrice = item.price;
-//       resultObj = item;
-//     }
-//   });
-//   return resultObj;
-// }
-
 
 
 
@@ -637,18 +428,6 @@ mapArray( ['rose', 'tulip', 'daisy'], function(f, i) {
 //=> ["1 - rose", "2 - tulip", "3 - daisy"]
 -----------------------------------------------------------------*/
 // Your solution for 17-mapArray here:
-
-function mapArray(arr, cb){
-  let newArr = []
-  //The mapArray function should iterate over each element in the array (first arg).
-  arr.forEach(function(el, idx){
-    //For each iteration, invoke the callback function (2nd arg), passing to it as arguments,the current element and its index.
-    newArr.push(cb(el, idx))
-  })
-  //Whatever is returned by the callback function should be included in the new array at the index of the current iteration.
-  return newArr
-}
-
 
 
 
@@ -687,25 +466,6 @@ reduceArray( ['Yes', 'No', 'Yes', 'Maybe'], function(acc, v) {
 // Your solution for 18-reduceArray here:
 
 
-function reduceArray(array, cb, acc) {
-  let result = acc;
-  //iterate over each element in the array 
-  array.forEach(function(el, idx) {
-    result = cb(result, el, idx);
-  });
-  return result;
-  //return whatever is returned by the callback function on the last iteration.
-}
-
-
-//For each iteration, invoke the callback function (2nd arg), passing to it three arguments:
-// (1) the "accumulator", which is the value returned by the callback during the previous iteration;
-// (2) the  current element; and (3) the index of the current iteration.
-
-//On the first iteration, provide the third argument provided to reduceArray as the first argument when invoking the callback,
-// then for subsequent iterations, provide the value returned by the callback during the previous iteration.
-
-
 /*-----------------------------------------------------------------
 Challenge: 19-flatten
 
@@ -733,13 +493,6 @@ flatten( [1, [2, [3, [4]]], 1, 'a', ['b', 'c']] );
 -----------------------------------------------------------------*/
 // Your solution for 19-flatten here:
 
-function flatten(arr){
-  let newArr = Array.prototype.concat.apply([], arr);
-  let finArr = Array.prototype.concat.apply([], newArr);
-  let lastArr = Array.prototype.concat.apply([], finArr);
-  return lastArr
-}
-
 
 
 /*-----------------------------------------------------------------
@@ -761,27 +514,6 @@ isPrime(29) //=> true
 isPrime(200) //=> false
 -----------------------------------------------------------------*/
 // Your solution for 20-isPrime here:
-
-function isPrime(num) {
-	// Initialize result to true
-	result = true;
-	// Also check to see if integer
-	// Check if number is greater than one
-	if (!Number.isInteger(num) || num < 2) {
-		console.warn('Input number must be positive integer greater than 1');
-		result = false;
-		return result;
-	}
-	// Loop over values between 2 up to but not including num
-	for (let i = 2; i < num; i++) {
-		// conditional that checks if num mod I is equal to zero
-		if (num % i === 0) {
-			result = false;
-		}
-	}
-	// return result
-	return result;
-}
 
 
 
@@ -809,41 +541,6 @@ primeFactors(200) //=> [2, 2, 2, 5, 5]
 -----------------------------------------------------------------*/
 // Your solution for 21-primeFactors here:
 
-function primeFactors(num){
-  let primeNums = []
-  let primeFacts = []
-  if(!Number.isInteger(num) || num < 2){
-    return primeFacts;
-  }
-  let i;
-  for(i = 2; i < num; i++){
-    let result = false;
-    for(let j = 2; j < i; j++){
-      if(i % j === 0){
-        result = true;
-    
-      }
-    }
-    if(result === false){
-      primeNums.push(i)
-    }
-  }
-   for(let k = 0; k < primeNums.length; k ++){
-    if(num % primeNums[k] === 0){
-      let sum = num / primeNums[k]
-      primeFacts.push(primeNums[k])
-      while(sum % primeNums[k] === 0){
-        console.log(primeNums[k])
-        primeFacts.push(primeNums[k])
-        sum /= primeNums[k];
-      }
-    } 
-   }
-   if(primeFacts.length === 0){
-     primeFacts.push(num) ;
-   }
-return primeFacts;
-}
 
 
 
@@ -872,16 +569,6 @@ intersection([1, 'a', true, 1, 1], [true, 1, 'b', 1]) //=> [1, true, 1]
 //   return arr1.filter(value => -1 !== arr2.indexOf(value))
 //  }
 
- function intersection(arr1, arr2) {
-  let newArr = [];
-  let arr2Copy = [...arr2];
-  arr1.forEach(val => {
-    let idx = arr2Copy.indexOf(val);
-    if (idx > -1) newArr.push(arr2Copy.splice(idx, 1)[0]);
-  });
-  return newArr;
-}
-
 
 
 /*-----------------------------------------------------------------
@@ -907,24 +594,6 @@ balancedBrackets( '[({}[])]' ) // => true
 // Your solution for 23-balancedBrackets here:
 
 //- Write a function called balancedBrackets that accepts a single string as argument.
-
-function balancedBrackets(els) {
-  // false if they are not balanced.
-  if (els.length % 2) return false;
-  //initiate array
-  var stack = [];
-  //loop through the input elements
-  for (var i = 0; i < els.length; i++) {
-    var b = els.charAt(i);
-    if ( '([{'.includes(b) ) {
-      stack.push(b);
-    } else {
-      if (!'() {} []'.includes(stack.pop() + b)) return false;
-    }
-  }
-  //should return true if the string's braces are "balanced" and false if they are not.
-  return true;
-}
 
 
 
@@ -953,18 +622,6 @@ isWinningTicket( [ ['ABC', 66], ['dddd', 100], ['Hello', 108] ] ) // => true
 isWinningTicket( [ ['ABC', 66], ['dddd', 15], ['Hello', 108] ] ) // => false
 -----------------------------------------------------------------*/
 // Your solution for 24-isWinningTicket here:
-
-function isWinningTicket(input){
-  var winner = true;
-  for (var i = 0; i < input.length; i++) {
-    var charFromNumber = String.fromCharCode(input[i][1]);
-    if (!input[i][0].includes(charFromNumber)) {
-      winner = false;
-      break;
-    }
-  }
-  return winner;
-}
 
 
 
