@@ -13,9 +13,6 @@ sayHello() //=> Hello!
 -----------------------------------------------------------------*/
 // Your solution for 00-sayHello (example) here:
 
-function sayHello() {
-  return 'Hello!';
-};
 
 
 /*-----------------------------------------------------------------
@@ -34,20 +31,7 @@ addOne(-5) //=> -4
 -----------------------------------------------------------------*/
 // Your solution for 01-addOne here:
 
-// function declaration
-function addOne(num) {
-  return num + 1;
-};
 
-// //function expression
-// const addOne2 = function(x){
-//   return x; 
-// }
-
-////arrow function
-// const addOne3 = (x) =>{
-//   return x;
-// }
 
 
 /*-----------------------------------------------------------------
@@ -69,32 +53,7 @@ addTwoNumbers('Hello', 5) //=> NaN
 -----------------------------------------------------------------*/
 // Your solution for 02-addTwoNumbers here:
 
-//typeof will check for type of many different things, we're just working with numbers here so ternary or isNaN is better
 
-// function addTwoNumbers(x, y) {
-//   if (typeof x === "number" && typeof y === "number"){
-//   console.log(x + y);
-//   return x + y;
-//   } else{
-//     console.log(NaN);
-//     return NaN;
-//   }
-// }
-
-// const addTwoNumbers = function(num1, num2){
-//   if(isNaN(num1) || isNaN(num2)){
-//     return NaN 
-//   } else {
-//     return num1 + num2
-//   }
-// }
-
-// ternary 
-// return isNaN(num1) || isNaN(num2) ? NaN : num1 + num2
-
-
-//arrow 
-const addTwoNumbers = (num1, num2) => isNaN(num1) || isNaN(num2) ? NaN : num1 + num2
 /*-----------------------------------------------------------------
 Challenge: 03-sumNumbers
 
@@ -113,7 +72,6 @@ sumNumbers([2, 10, -5]) //=> 7
 sumNumbers([]) //=> 0
 -----------------------------------------------------------------*/
 // Your solution for 03-sumNumbers here:
-
 
 
 /*-----------------------------------------------------------------
@@ -135,6 +93,9 @@ add(7,-12) //=> -5
 -----------------------------------------------------------------*/
 // Your solution for 04-addList here:
 
+// function addList(...args) {
+//   return args.reduce((acc, val) => acc + val, 0);
+// }
 
 
 /*-----------------------------------------------------------------
@@ -180,6 +141,7 @@ range(5,2) //=> "First argument must be less than second"
 
 
 
+
 /*-----------------------------------------------------------------
 Challenge: 07-reverseUpcaseString
 
@@ -194,7 +156,6 @@ Examples:
 reverseUpcaseString("SEI Rocks!"); //=> "!SKCOR IES" 
 -----------------------------------------------------------------*/
 // Your solution for 07-reverseUpcaseString here:
-
 
 
 /*-----------------------------------------------------------------
@@ -215,6 +176,7 @@ removeEnds('a'); //=> "" (empty string)
 // Your solution for 08-removeEnds here:
 
 
+
 /*-----------------------------------------------------------------
 Challenge: 09-charCount
 
@@ -233,6 +195,7 @@ charCount('hello') //=> { h: 1, e: 1, l: 2, o: 1 }
 charCount('Today is fantastic!') //=> { T: 1, o: 1, d: 1, a: 3, y: 1, ' ': 2, i: 2, s: 2, f: 1, n: 1, t: 2, c: 1, '!': 1 }
 -----------------------------------------------------------------*/
 // Your solution for 09-charCount here:
+
 
 
 /*-----------------------------------------------------------------
@@ -281,7 +244,6 @@ isPalindrome(''); //=> true
 // Your solution for 11-isPalindrome here:
 
 
-
 /*-----------------------------------------------------------------
 Challenge: 12-hammingDistance
 
@@ -305,6 +267,7 @@ hammingDistance('abc', 'ab'); //=> NaN
 // Your solution for 12-hammingDistance here:
 
 
+
 /*-----------------------------------------------------------------
 Challenge: 13-mumble
 
@@ -326,6 +289,7 @@ mumble('!A 2'); //=> '!-AA-   -2222'
 // Your solution for 13-mumble here:
 
 
+
 /*-----------------------------------------------------------------
 Challenge: 14-fromPairs
 
@@ -345,6 +309,7 @@ fromPairs([ ['name', 'Sam"], ['age', 24], ['name', 'Sally'] ]) //=> { name: "Sal
 // Your solution for 14-fromPairs here:
 
 
+
 /*-----------------------------------------------------------------
 Challenge: 15-mergeObjects
 
@@ -362,7 +327,6 @@ mergeObjects({a: 1, b: 2, c: 3}, {d: 4});  //=> {a: 1, b: 2, c: 3, d: 4}
 mergeObjects({a: 1, b: 2, c: 3}, {d: 4}, {b: 22, d: 44});  //=> {a: 1, b: 22, c: 3, d: 44}
 -----------------------------------------------------------------*/
 // Your solution for 15-mergeObjects here:
-
 
 
 
@@ -466,6 +430,7 @@ reduceArray( ['Yes', 'No', 'Yes', 'Maybe'], function(acc, v) {
 // Your solution for 18-reduceArray here:
 
 
+
 /*-----------------------------------------------------------------
 Challenge: 19-flatten
 
@@ -495,6 +460,7 @@ flatten( [1, [2, [3, [4]]], 1, 'a', ['b', 'c']] );
 
 
 
+
 /*-----------------------------------------------------------------
 Challenge: 20-isPrime
 
@@ -514,7 +480,6 @@ isPrime(29) //=> true
 isPrime(200) //=> false
 -----------------------------------------------------------------*/
 // Your solution for 20-isPrime here:
-
 
 
 /*-----------------------------------------------------------------
@@ -540,7 +505,6 @@ primeFactors(105) //=> [3, 5, 7]
 primeFactors(200) //=> [2, 2, 2, 5, 5]
 -----------------------------------------------------------------*/
 // Your solution for 21-primeFactors here:
-
 
 
 
